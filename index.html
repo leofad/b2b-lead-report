@@ -1,0 +1,735 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B2B Lead Generation Report – Fahad Latif | March 2026</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #0A1628; color: #E2E8F0; min-height: 100vh; }
+
+  /* HEADER */
+  .header { background: linear-gradient(135deg, #0A1628 0%, #0F2044 100%); border-bottom: 2px solid #2563EB; padding: 36px 48px; }
+  .header-top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .brand { font-size: 12px; letter-spacing: 3px; color: #10B981; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; }
+  .header h1 { font-size: 28px; font-weight: 800; color: #FFFFFF; line-height: 1.2; }
+  .header h1 span { color: #2563EB; }
+  .header-meta { text-align: right; font-size: 12px; color: #94A3B8; }
+  .header-meta strong { color: #E2E8F0; display: block; margin-bottom: 3px; }
+  .sub { margin-top: 12px; font-size: 13px; color: #94A3B8; }
+
+  /* EXEC SUMMARY */
+  .section { padding: 36px 48px; }
+  .section-title { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #10B981; font-weight: 700; margin-bottom: 20px; }
+  .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px; }
+  .stat-card { background: #0F2044; border: 1px solid #1E3A5F; border-radius: 10px; padding: 20px; text-align: center; }
+  .stat-card .num { font-size: 36px; font-weight: 800; color: #2563EB; line-height: 1; }
+  .stat-card .num.green { color: #10B981; }
+  .stat-card .num.red { color: #F87171; }
+  .stat-card .label { font-size: 11px; color: #94A3B8; margin-top: 6px; text-transform: uppercase; letter-spacing: 1px; }
+
+  /* LEAD TABLE */
+  .lead-table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid #1E3A5F; }
+  table { width: 100%; border-collapse: collapse; }
+  thead tr { background: #0F2044; }
+  thead th { padding: 14px 16px; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #94A3B8; font-weight: 700; text-align: left; border-bottom: 2px solid #2563EB; white-space: nowrap; }
+  tbody tr { border-bottom: 1px solid #1E3A5F; transition: background 0.15s; }
+  tbody tr:hover { background: #132035; }
+  tbody tr:last-child { border-bottom: none; }
+  td { padding: 14px 16px; font-size: 12px; vertical-align: top; }
+  .idx { color: #94A3B8; font-weight: 700; width: 36px; }
+  .co-name { font-weight: 700; color: #FFFFFF; font-size: 13px; }
+  .co-url { font-size: 11px; color: #2563EB; margin-top: 2px; }
+  .service-tag { display: inline-block; background: #0F2044; border: 1px solid #1E3A5F; border-radius: 4px; padding: 2px 8px; font-size: 10px; color: #94A3B8; margin-top: 4px; margin-right: 4px; }
+  .badge { display: inline-block; border-radius: 20px; padding: 3px 10px; font-size: 10px; font-weight: 700; }
+  .badge.high { background: #2D1515; color: #F87171; border: 1px solid #F87171; }
+  .badge.medium { background: #2D2915; color: #FBBF24; border: 1px solid #FBBF24; }
+  .badge.low { background: #152D1E; color: #10B981; border: 1px solid #10B981; }
+  .apply-btn { display: inline-block; background: #2563EB; color: white; border-radius: 6px; padding: 6px 14px; font-size: 11px; font-weight: 700; text-decoration: none; white-space: nowrap; }
+  .apply-btn:hover { background: #1D4ED8; }
+  .budget-val { color: #10B981; font-weight: 700; font-size: 12px; }
+  .notes-text { font-size: 11px; color: #94A3B8; line-height: 1.5; max-width: 260px; }
+
+  /* DEEP DIVE */
+  .audit-grid { display: grid; grid-template-columns: 1fr; gap: 24px; }
+  .audit-card { background: #0F2044; border: 1px solid #1E3A5F; border-radius: 12px; overflow: hidden; }
+  .audit-header { background: linear-gradient(90deg, #2563EB 0%, #1D4ED8 100%); padding: 18px 24px; }
+  .audit-header h3 { font-size: 16px; font-weight: 800; color: white; }
+  .audit-header .url { font-size: 11px; color: rgba(255,255,255,0.7); margin-top: 3px; }
+  .audit-body { padding: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .audit-section h4 { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #2563EB; font-weight: 700; margin-bottom: 12px; border-bottom: 1px solid #1E3A5F; padding-bottom: 6px; }
+  .audit-section ul { list-style: none; }
+  .audit-section ul li { font-size: 12px; color: #CBD5E1; padding: 5px 0; border-bottom: 1px solid #1A2E4A; display: flex; align-items: flex-start; gap: 8px; line-height: 1.4; }
+  .audit-section ul li::before { content: "→"; color: #2563EB; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  .issue::before { content: "✗" !important; color: #F87171 !important; }
+  .opp::before { content: "✓" !important; color: #10B981 !important; }
+  .service-map { background: #0A1628; border: 1px solid #1E3A5F; border-radius: 8px; padding: 16px; margin-top: 16px; }
+  .service-map h4 { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #10B981; font-weight: 700; margin-bottom: 10px; }
+  .service-row { display: flex; justify-content: space-between; font-size: 11px; padding: 5px 0; border-bottom: 1px solid #1E3A5F; color: #CBD5E1; }
+  .service-row:last-child { border-bottom: none; }
+  .svc-price { color: #10B981; font-weight: 700; }
+
+  /* QUICK ACTION TABLE */
+  .qa-table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid #1E3A5F; }
+  .qa-table { width: 100%; border-collapse: collapse; }
+  .qa-table thead tr { background: #10B981; }
+  .qa-table thead th { padding: 12px 14px; font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: #0A1628; font-weight: 800; text-align: left; }
+  .qa-table tbody tr { border-bottom: 1px solid #1E3A5F; }
+  .qa-table tbody tr:hover { background: #132035; }
+  .qa-table td { padding: 12px 14px; font-size: 12px; }
+  .qa-table .deadline-tag { display: inline-block; background: #2D1515; color: #F87171; border: 1px solid #F87171; border-radius: 4px; padding: 2px 8px; font-size: 10px; font-weight: 700; }
+  .qa-table .deadline-tag.green { background: #152D1E; color: #10B981; border-color: #10B981; }
+
+  /* OUTREACH EMAILS */
+  .email-card { background: #0F2044; border: 1px solid #1E3A5F; border-radius: 12px; margin-bottom: 24px; overflow: hidden; }
+  .email-card .email-header { background: #0A1628; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1E3A5F; }
+  .email-card .email-header h4 { font-size: 14px; font-weight: 700; color: #FFFFFF; }
+  .email-card .email-header .source { font-size: 11px; color: #2563EB; }
+  .email-body { padding: 24px; }
+  .email-meta { display: grid; grid-template-columns: 80px 1fr; gap: 4px 12px; margin-bottom: 18px; font-size: 12px; }
+  .email-meta .label { color: #64748B; font-weight: 700; }
+  .email-meta .value { color: #E2E8F0; }
+  .email-body pre { background: #070F1E; border: 1px solid #1E3A5F; border-radius: 8px; padding: 18px; font-size: 12px; line-height: 1.7; color: #CBD5E1; white-space: pre-wrap; font-family: 'Segoe UI', Arial, sans-serif; }
+
+  /* DIVIDER */
+  .divider { border: none; border-top: 1px solid #1E3A5F; margin: 0 48px; }
+
+  /* FOOTER */
+  .footer { padding: 24px 48px; text-align: center; font-size: 11px; color: #475569; border-top: 1px solid #1E3A5F; margin-top: 32px; }
+  .footer strong { color: #2563EB; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-top">
+    <div>
+      <div class="brand">B2B Lead Generation Report</div>
+      <h1>10 Live Client Leads —<br><span>WordPress · Technical SEO · Core Web Vitals</span></h1>
+      <p class="sub">Global targeting · All niches · PeoplePerHour + Freelancer.com · March 23, 2026</p>
+    </div>
+    <div class="header-meta">
+      <strong>Fahad Latif (Leo)</strong>
+      WordPress Developer & SEO Expert<br>
+      Lahore, Punjab, Pakistan<br>
+      Fiverr: fahad_mian &nbsp;|&nbsp; Upwork: $20/hr
+    </div>
+  </div>
+</div>
+
+<!-- EXECUTIVE SUMMARY -->
+<div class="section">
+  <div class="section-title">Phase 1 — Executive Summary</div>
+  <div class="stats-grid">
+    <div class="stat-card"><div class="num">10</div><div class="label">Qualified Leads</div></div>
+    <div class="stat-card"><div class="num red">3</div><div class="label">High Priority</div></div>
+    <div class="stat-card"><div class="num" style="color:#FBBF24">5</div><div class="label">Medium Priority</div></div>
+    <div class="stat-card"><div class="num green">£400/mo</div><div class="label">Best Retainer Value</div></div>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-card"><div class="num green">9</div><div class="label">PeoplePerHour Leads</div></div>
+    <div class="stat-card"><div class="num" style="color:#FBBF24">1</div><div class="label">Freelancer.com Lead</div></div>
+    <div class="stat-card"><div class="num" style="color:#A78BFA">3</div><div class="label">WP Dev + SEO Bundle</div></div>
+    <div class="stat-card"><div class="num" style="color:#38BDF8">2</div><div class="label">Retainer Opportunities</div></div>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- FULL LEAD LIST -->
+<div class="section">
+  <div class="section-title">Phase 1 — Full Lead List (10 Qualified Leads)</div>
+  <div class="lead-table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Company</th>
+          <th>Service Needed</th>
+          <th>Platform</th>
+          <th>Budget</th>
+          <th>Priority</th>
+          <th>Source</th>
+          <th>Contact</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="idx">01</td>
+          <td>
+            <div class="co-name">Stay Smart</div>
+            <div class="co-url">stay-smarter.com</div>
+            <span class="service-tag">London, UK</span>
+          </td>
+          <td>Full WordPress Redesign + Technical SEO<br><span class="service-tag">Local SEO</span><span class="service-tag">Schema</span><span class="service-tag">GMB</span></td>
+          <td>WordPress</td>
+          <td><span class="budget-val">Open to Quotes</span></td>
+          <td><span class="badge high">🔴 HIGH</span></td>
+          <td>PeoplePerHour</td>
+          <td><a class="apply-btn" href="https://www.peopleperhour.com/freelance-jobs" target="_blank">Apply →</a></td>
+          <td class="notes-text">Award-winning luxury serviced accommodation (5 London locations). Full redesign + location SEO pages + GMB. 32 proposals open.</td>
+        </tr>
+        <tr>
+          <td class="idx">02</td>
+          <td>
+            <div class="co-name">Drinks by Kingpin</div>
+            <div class="co-url">drinksbykingpin.com</div>
+            <span class="service-tag">UK</span>
+          </td>
+          <td>Technical SEO Setup (One-off)<br><span class="service-tag">Yoast</span><span class="service-tag">GSC</span><span class="service-tag">Sitemap</span><span class="service-tag">Indexing</span></td>
+          <td>WordPress</td>
+          <td><span class="budget-val">Fixed Price</span></td>
+          <td><span class="badge high">🔴 HIGH</span></td>
+          <td>PeoplePerHour</td>
+          <td><a class="apply-btn" href="https://www.peopleperhour.com/freelance-jobs/digital-marketing/seo" target="_blank">Apply →</a></td>
+          <td class="notes-text">B2B design agency. Defined deliverables. Quick win for portfolio + PPH reviews.</td>
+        </tr>
+        <tr>
+          <td class="idx">03</td>
+          <td>
+            <div class="co-name">UK B2B Digital Platform</div>
+            <div class="co-url">Regulated sector (undisclosed)</div>
+            <span class="service-tag">UK Remote</span>
+          </td>
+          <td>3-Month Technical SEO Retainer<br><span class="service-tag">Core Web Vitals</span><span class="service-tag">Schema</span><span class="service-tag">25-50 Geo Pages</span></td>
+          <td>WordPress/Custom</td>
+          <td><span class="budget-val">£400/month × 3</span></td>
+          <td><span class="badge high">🔴 HIGH</span></td>
+          <td>PeoplePerHour</td>
+          <td><a class="apply-btn" href="https://www.peopleperhour.com/freelance-seo-jobs" target="_blank">Apply →</a></td>
+          <td class="notes-text">Recurring revenue. Building 25-50 geo-intent landing pages. Strategy + implementation. "Not a backlink reseller" — perfect for Fahad.</td>
+        </tr>
+        <tr>
+          <td class="idx">04</td>
+          <td>
+            <div class="co-name">DogFence.co.uk</div>
+            <div class="co-url">dogfence.co.uk</div>
+            <span class="service-tag">UK</span>
+          </td>
+          <td>WordPress Technical SEO Cleanup<br><span class="service-tag">H1 Fix</span><span class="service-tag">404 Repair</span><span class="service-tag">Meta Desc</span><span class="service-tag">Speed</span></td>
+          <td>WordPress + Elementor + WooCommerce</td>
+          <td><span class="budget-val">Fixed Price</span></td>
+          <td><span class="badge medium">🟡 MEDIUM</span></td>
+          <td>PeoplePerHour</td>
+          <td><a class="apply-btn" href="https://www.peopleperhour.com/freelance-seo-jobs" target="_blank">Apply →</a></td>
+          <td class="notes-text">20+ year old WooCommerce site. Had recent audit — issues identified. No redesign. Technical cleanup only.</td>
+        </tr>
+        <tr>
+          <td class="idx">05</td>
+          <td>
+            <div class="co-name">Custom WP Speed Client</div>
+            <div class="co-url">Anonymous (PPH)</div>
+            <span class="service-tag">Remote</span>
+          </td>
+          <td>Core Web Vitals & PageSpeed (90–95+ PSI)<br><span class="service-tag">LCP</span><span class="service-tag">INP</span><span class="service-tag">CLS</span><span class="service-tag">Manual Coding</span></td>
+          <td>WordPress (Custom-Coded)</td>
+          <td><span class="budget-val">Fixed Price</span></td>
+          <td><span class="badge medium">🟡 MEDIUM</span></td>
+          <td>PeoplePerHour</td>
+          <td><a class="apply-btn" href="https://www.peopleperhour.com/freelance-react-js-jobs" target="_blank">Apply →</a></td>
+          <td class="notes-text">Heavy custom WP site, very low scores. No plugin-only optimization — manual coding required. Fahad's exact specialty.</td>
+        </tr>
+        <tr>
+          <td class="idx">06</td>
+          <td>
+            <div class="co-name">Accident Management Co.</div>
+            <div class="co-url">Anonymous (PPH)</div>
+            <span class="service-tag">UK Remote</span>
+          </td>
+          <td>New WordPress Site (6-8 pages)<br><span class="service-tag">SEO-Friendly</span><span class="service-tag">GA4</span><span class="service-tag">Responsive</span></td>
+          <td>WordPress</td>
+          <td><span class="budget-val">Flexible</span></td>
+          <td><span class="badge medium">🟡 MEDIUM</span></td>
+          <td>PeoplePerHour</td>
+          <td><a class="apply-btn" href="https://www.peopleperhour.com/freelance-jobs/technology-programming/website-development" target="_blank">Apply →</a></td>
+          <td class="notes-text">Professional law-firm-grade WordPress site. Mobile-first, SEO setup, GA4 conversion tracking. Good portfolio piece.</td>
+        </tr>
+        <tr>
+          <td class="idx">07</td>
+          <td>
+            <div class="co-name">Windsor Meeting Rooms</div>
+            <div class="co-url">Anonymous (PPH)</div>
+            <span class="service-tag">Windsor, UK</span>
+          </td>
+          <td>Local SEO + GMB + Schema + Speed Fixes<br><span class="service-tag">Monthly Reporting</span></td>
+          <td>Unknown</td>
+          <td><span class="budget-val">Monthly Retainer</span></td>
+          <td><span class="badge medium">🟡 MEDIUM</span></td>
+          <td>PeoplePerHour</td>
+          <td><a class="apply-btn" href="https://www.peopleperhour.com/freelance-seo-jobs" target="_blank">Apply →</a></td>
+          <td class="notes-text">Local business targeting Windsor + nearby areas. Ongoing SEO + GMB management. Good retainer lead.</td>
+        </tr>
+        <tr>
+          <td class="idx">08</td>
+          <td>
+            <div class="co-name">3-Site 404 Fix Client</div>
+            <div class="co-url">Anonymous (Freelancer.com)</div>
+            <span class="service-tag">Remote</span>
+          </td>
+          <td>Crawl + 301 Redirects (4000+ 404s, 3 WP sites)<br><span class="service-tag">Link Equity</span><span class="service-tag">GA4</span></td>
+          <td>WordPress × 3</td>
+          <td><span class="budget-val">Fixed Price</span></td>
+          <td><span class="badge medium">🟡 MEDIUM</span></td>
+          <td>Freelancer.com</td>
+          <td><a class="apply-btn" href="https://www.freelancer.com/jobs/wordpress" target="_blank">Apply →</a></td>
+          <td class="notes-text">Urgent technical fix across 3 WordPress sites. Client uses GA4 for traffic analysis. Screaming Frog + redirect mapping required.</td>
+        </tr>
+        <tr>
+          <td class="idx">09</td>
+          <td>
+            <div class="co-name">Brazilian Zouk LMS</div>
+            <div class="co-url">Anonymous (PPH)</div>
+            <span class="service-tag">Remote (Brazil)</span>
+          </td>
+          <td>WordPress LMS + Long-Term Partner<br><span class="service-tag">LearnDash</span><span class="service-tag">MemberPress</span><span class="service-tag">GamiPress</span><span class="service-tag">WPML</span></td>
+          <td>WordPress</td>
+          <td><span class="budget-val">Project-Based</span></td>
+          <td><span class="badge low">🟢 LOW-MED</span></td>
+          <td>PeoplePerHour</td>
+          <td><a class="apply-btn" href="https://www.peopleperhour.com/freelance-jobs/technology-programming/website-development" target="_blank">Apply →</a></td>
+          <td class="notes-text">Complex LMS platform — long-term partner opportunity. High effort but high value if secured. Apply only if bandwidth allows.</td>
+        </tr>
+        <tr>
+          <td class="idx">10</td>
+          <td>
+            <div class="co-name">Suri Online Marketing</div>
+            <div class="co-url">Birmingham, UK (Remote)</div>
+            <span class="service-tag">Agency</span>
+          </td>
+          <td>SEO Specialist (Ongoing)<br><span class="service-tag">On-Page SEO</span><span class="service-tag">Technical SEO</span><span class="service-tag">Reporting</span></td>
+          <td>Various CMS</td>
+          <td><span class="budget-val">Ongoing Retainer</span></td>
+          <td><span class="badge low">🟢 LOW-MED</span></td>
+          <td>PeoplePerHour</td>
+          <td><a class="apply-btn" href="https://www.peopleperhour.com/freelance-jobs/digital-marketing/seo/seo-individual-4285288" target="_blank">Apply →</a></td>
+          <td class="notes-text">Agency subcontracting SEO. Stable work. Include "82" in your application (they test if you read the brief).</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- DEEP DIVE AUDITS (TOP 3) -->
+<div class="section">
+  <div class="section-title">Phase 2 — Deep-Dive Audit (Top 3 Leads)</div>
+  <div class="audit-grid">
+
+    <!-- LEAD 1: Stay Smart -->
+    <div class="audit-card">
+      <div class="audit-header">
+        <h3>01 · Stay Smart — Luxury Serviced Accommodation</h3>
+        <div class="url">stay-smarter.com · London, UK · PeoplePerHour</div>
+      </div>
+      <div class="audit-body">
+        <div class="audit-section">
+          <h4>Known Issues (from brief)</h4>
+          <ul>
+            <li class="issue">Current site does not reflect luxury brand positioning</li>
+            <li class="issue">No location-specific SEO landing pages</li>
+            <li class="issue">No schema markup (LocalBusiness, LodgingBusiness)</li>
+            <li class="issue">No Google Business Profile optimization mentioned</li>
+            <li class="issue">No booking/inquiry form with automation</li>
+            <li class="issue">Performance and mobile responsiveness unstated</li>
+          </ul>
+        </div>
+        <div class="audit-section">
+          <h4>Opportunities for Fahad</h4>
+          <ul>
+            <li class="opp">Full WordPress build with 5 location-specific SEO pages</li>
+            <li class="opp">On-page + local SEO (Golders Green, Fulham, Bermondsey, Deptford, Farringdon)</li>
+            <li class="opp">Schema: LodgingBusiness, LocalBusiness, FAQ, BreadcrumbList</li>
+            <li class="opp">GMB setup and optimization for all 5 locations</li>
+            <li class="opp">GA4 + conversion tracking on all inquiry forms</li>
+            <li class="opp">Monthly maintenance retainer opportunity post-launch</li>
+          </ul>
+        </div>
+      </div>
+      <div style="padding: 0 24px 24px;">
+        <div class="service-map">
+          <h4>Service → Revenue Mapping</h4>
+          <div class="service-row"><span>WordPress Design & Development (full build)</span><span class="svc-price">£1,800 – £3,000</span></div>
+          <div class="service-row"><span>On-Page SEO + Local SEO (5 pages × locations)</span><span class="svc-price">£500 – £800</span></div>
+          <div class="service-row"><span>Schema Markup Implementation</span><span class="svc-price">£150</span></div>
+          <div class="service-row"><span>GMB Setup + Optimization (5 locations)</span><span class="svc-price">£300</span></div>
+          <div class="service-row"><span>Monthly Maintenance Retainer (post-launch)</span><span class="svc-price">£200/month</span></div>
+          <div class="service-row"><span><strong>Total Project Estimate</strong></span><span class="svc-price" style="color:#FBBF24">£2,750 – £4,250</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEAD 2: Drinks by Kingpin -->
+    <div class="audit-card">
+      <div class="audit-header">
+        <h3>02 · Drinks by Kingpin — B2B Design Agency</h3>
+        <div class="url">drinksbykingpin.com · UK · Technical SEO One-Off</div>
+      </div>
+      <div class="audit-body">
+        <div class="audit-section">
+          <h4>Known Issues (from brief)</h4>
+          <ul>
+            <li class="issue">Site not correctly indexed or visible on Google</li>
+            <li class="issue">Yoast SEO plugin not properly configured</li>
+            <li class="issue">No XML sitemap submitted to GSC</li>
+            <li class="issue">robots.txt likely misconfigured</li>
+            <li class="issue">GSC not verified or set up</li>
+            <li class="issue">Indexing issues preventing Google visibility</li>
+          </ul>
+        </div>
+        <div class="audit-section">
+          <h4>Opportunities for Fahad</h4>
+          <ul>
+            <li class="opp">Configure Yoast SEO fully (titles, meta, schema)</li>
+            <li class="opp">Generate and submit XML sitemap to GSC</li>
+            <li class="opp">Verify property in Google Search Console</li>
+            <li class="opp">Fix robots.txt / noindex issues</li>
+            <li class="opp">Run technical SEO audit (Screaming Frog)</li>
+            <li class="opp">Deliver concise report with next-step recommendations</li>
+          </ul>
+        </div>
+      </div>
+      <div style="padding: 0 24px 24px;">
+        <div class="service-map">
+          <h4>Service → Revenue Mapping</h4>
+          <div class="service-row"><span>Technical SEO Setup (Yoast, GSC, Sitemap)</span><span class="svc-price">£150 – £250</span></div>
+          <div class="service-row"><span>Technical Audit Report</span><span class="svc-price">£80 – £120</span></div>
+          <div class="service-row"><span>Ongoing Monthly SEO Retainer (upsell)</span><span class="svc-price">£250/month</span></div>
+          <div class="service-row"><span><strong>Total One-Off Estimate</strong></span><span class="svc-price" style="color:#FBBF24">£200 – £350</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEAD 3: UK B2B Platform -->
+    <div class="audit-card">
+      <div class="audit-header">
+        <h3>03 · UK B2B Digital Platform — 3-Month SEO Retainer</h3>
+        <div class="url">Regulated sector · Remote UK · £400/month × 3 months</div>
+      </div>
+      <div class="audit-body">
+        <div class="audit-section">
+          <h4>Known Needs (from brief)</h4>
+          <ul>
+            <li class="issue">Building 25–50 geo-intent landing pages — no architecture set</li>
+            <li class="issue">URL strategy + scalable structure undefined</li>
+            <li class="issue">Cannibalisation risk across geo pages</li>
+            <li class="issue">Internal linking strategy missing for geo cluster</li>
+            <li class="issue">Schema not implemented (FAQ, Org, Breadcrumb)</li>
+            <li class="issue">Core Web Vitals review needed on mobile</li>
+          </ul>
+        </div>
+        <div class="audit-section">
+          <h4>Deliverable Scope (Phase 1 + 2)</h4>
+          <ul>
+            <li class="opp">Full URL structure + crawl budget strategy</li>
+            <li class="opp">Sitemap hierarchy + canonical structure</li>
+            <li class="opp">Schema markup templates (FAQ, Org, Breadcrumb)</li>
+            <li class="opp">Keyword research + geo cluster mapping</li>
+            <li class="opp">Competitor gap + long-tail opportunity analysis</li>
+            <li class="opp">Core Web Vitals review + mobile performance audit</li>
+          </ul>
+        </div>
+      </div>
+      <div style="padding: 0 24px 24px;">
+        <div class="service-map">
+          <h4>Service → Revenue Mapping</h4>
+          <div class="service-row"><span>Month 1 – Audit, Strategy, Architecture</span><span class="svc-price">£400</span></div>
+          <div class="service-row"><span>Month 2 – Implementation Support</span><span class="svc-price">£400</span></div>
+          <div class="service-row"><span>Month 3 – Ongoing Expansion + Reporting</span><span class="svc-price">£400</span></div>
+          <div class="service-row"><span>Core Web Vitals Fix (additional)</span><span class="svc-price">£200</span></div>
+          <div class="service-row"><span><strong>Total 3-Month Contract</strong></span><span class="svc-price" style="color:#FBBF24">£1,200 – £1,400</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- QUICK ACTION TABLE -->
+<div class="section">
+  <div class="section-title">Phase 3 — Quick-Action Table (Apply This Week)</div>
+  <div class="qa-table-wrap">
+    <table class="qa-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Company</th>
+          <th>Contact Channel</th>
+          <th>Recommended Service</th>
+          <th>Est. Value</th>
+          <th>Deadline / Urgency</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>01</td>
+          <td><strong>Stay Smart</strong><br><small style="color:#94A3B8">stay-smarter.com</small></td>
+          <td>PeoplePerHour Project</td>
+          <td>WordPress Redesign + Local SEO</td>
+          <td style="color:#10B981"><strong>£2,750–£4,250</strong></td>
+          <td><span class="deadline-tag">Within 2 Weeks</span></td>
+          <td><a class="apply-btn" href="https://www.peopleperhour.com/freelance-jobs" target="_blank">Apply →</a></td>
+        </tr>
+        <tr>
+          <td>02</td>
+          <td><strong>Drinks by Kingpin</strong><br><small style="color:#94A3B8">drinksbykingpin.com</small></td>
+          <td>PeoplePerHour Project</td>
+          <td>Technical SEO One-Off</td>
+          <td style="color:#10B981"><strong>£200–£350</strong></td>
+          <td><span class="deadline-tag">Fast Turnaround Req.</span></td>
+          <td><a class="apply-btn" href="https://www.peopleperhour.com/freelance-seo-jobs" target="_blank">Apply →</a></td>
+        </tr>
+        <tr>
+          <td>03</td>
+          <td><strong>UK B2B Platform</strong><br><small style="color:#94A3B8">Regulated Sector</small></td>
+          <td>PeoplePerHour Project</td>
+          <td>3-Month Technical SEO Retainer</td>
+          <td style="color:#10B981"><strong>£1,200–£1,400</strong></td>
+          <td><span class="deadline-tag green">Open Now</span></td>
+          <td><a class="apply-btn" href="https://www.peopleperhour.com/freelance-seo-jobs" target="_blank">Apply →</a></td>
+        </tr>
+        <tr>
+          <td>04</td>
+          <td><strong>Custom WP Speed</strong><br><small style="color:#94A3B8">PPH – Anonymous</small></td>
+          <td>PeoplePerHour Project</td>
+          <td>Core Web Vitals + PageSpeed Fix</td>
+          <td style="color:#10B981"><strong>£150–£300</strong></td>
+          <td><span class="deadline-tag green">Open Now</span></td>
+          <td><a class="apply-btn" href="https://www.peopleperhour.com/freelance-react-js-jobs" target="_blank">Apply →</a></td>
+        </tr>
+        <tr>
+          <td>05</td>
+          <td><strong>DogFence.co.uk</strong><br><small style="color:#94A3B8">WooCommerce Site</small></td>
+          <td>PeoplePerHour Project</td>
+          <td>Technical SEO Cleanup</td>
+          <td style="color:#10B981"><strong>£100–£200</strong></td>
+          <td><span class="deadline-tag green">Open Now</span></td>
+          <td><a class="apply-btn" href="https://www.peopleperhour.com/freelance-seo-jobs" target="_blank">Apply →</a></td>
+        </tr>
+        <tr>
+          <td>06</td>
+          <td><strong>Accident Mgmt. Co.</strong><br><small style="color:#94A3B8">UK, PPH</small></td>
+          <td>PeoplePerHour Project</td>
+          <td>New WordPress Site (6-8 pages)</td>
+          <td style="color:#10B981"><strong>£600–£1,000</strong></td>
+          <td><span class="deadline-tag green">Open Now</span></td>
+          <td><a class="apply-btn" href="https://www.peopleperhour.com/freelance-jobs/technology-programming/website-development" target="_blank">Apply →</a></td>
+        </tr>
+        <tr>
+          <td>07</td>
+          <td><strong>Windsor Meeting Rooms</strong><br><small style="color:#94A3B8">Windsor, UK</small></td>
+          <td>PeoplePerHour Project</td>
+          <td>Local SEO + GMB + Schema</td>
+          <td style="color:#10B981"><strong>£250/mo retainer</strong></td>
+          <td><span class="deadline-tag green">Open Now</span></td>
+          <td><a class="apply-btn" href="https://www.peopleperhour.com/freelance-seo-jobs" target="_blank">Apply →</a></td>
+        </tr>
+        <tr>
+          <td>08</td>
+          <td><strong>3-Site 404 Fix</strong><br><small style="color:#94A3B8">Freelancer.com</small></td>
+          <td>Freelancer.com Project</td>
+          <td>Crawl + 301 Redirects</td>
+          <td style="color:#10B981"><strong>£100–£200</strong></td>
+          <td><span class="deadline-tag green">Open Now</span></td>
+          <td><a class="apply-btn" href="https://www.freelancer.com/jobs/wordpress" target="_blank">Apply →</a></td>
+        </tr>
+        <tr>
+          <td>09</td>
+          <td><strong>Brazilian Zouk LMS</strong><br><small style="color:#94A3B8">PPH Remote</small></td>
+          <td>PeoplePerHour Project</td>
+          <td>WordPress + LearnDash LMS</td>
+          <td style="color:#10B981"><strong>£1,500–£3,000</strong></td>
+          <td><span class="deadline-tag green">Open Now</span></td>
+          <td><a class="apply-btn" href="https://www.peopleperhour.com/freelance-jobs/technology-programming/website-development" target="_blank">Apply →</a></td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td><strong>Suri Online Marketing</strong><br><small style="color:#94A3B8">Birmingham, Remote</small></td>
+          <td>PeoplePerHour (include "82")</td>
+          <td>SEO Specialist – Ongoing</td>
+          <td style="color:#10B981"><strong>Ongoing Retainer</strong></td>
+          <td><span class="deadline-tag green">Open Now</span></td>
+          <td><a class="apply-btn" href="https://www.peopleperhour.com/freelance-jobs/digital-marketing/seo/seo-individual-4285288" target="_blank">Apply →</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<hr class="divider">
+
+<!-- OUTREACH EMAILS -->
+<div class="section">
+  <div class="section-title">Phase 3 — Personalized Outreach Proposals (Top 3)</div>
+
+  <div class="email-card">
+    <div class="email-header">
+      <h4>01 · Stay Smart — Full WordPress Redesign + SEO</h4>
+      <span class="source">PeoplePerHour Proposal</span>
+    </div>
+    <div class="email-body">
+      <div class="email-meta">
+        <span class="label">To:</span><span class="value">Stay Smart (via PPH – Shushant K.)</span>
+        <span class="label">Re:</span><span class="value">Website Redesign + SEO for Award-Winning Serviced Accommodation Company</span>
+        <span class="label">Budget:</span><span class="value">Open to quotes — one-off + optional retainer</span>
+        <span class="label">Channel:</span><span class="value">PeoplePerHour Project Proposal</span>
+      </div>
+<pre>Hello,
+
+I've reviewed your brief carefully — congratulations on your Prestige Award 2026/27 recognition and your growing portfolio across Golders Green, Fulham, Bermondsey, Deptford, and Farringdon.
+
+Your instinct is right: the current site doesn't communicate the premium quality your brand has earned. Here's exactly what I'd deliver:
+
+— WHAT I'LL BUILD —
+
+Full WordPress redesign — clean, modern, luxury aesthetic. Fast-loading, mobile-first, no bloated plugins.
+
+Pages: Home | About | 5 Property Listing pages (one per location) | 5 Location SEO landing pages (targeting "serviced apartments + [area]") | Airbnb Management | Become a Host | FAQ | Contact + Inquiry Form
+
+— SEO IMPLEMENTATION —
+
+On-page SEO across all pages (titles, meta, H1/H2, internal linking)
+Schema markup: LodgingBusiness, LocalBusiness, FAQ, BreadcrumbList
+Google Business Profile setup + optimization for all 5 London locations
+Google Analytics 4 + conversion tracking on inquiry forms
+Location-specific keyword strategy (I'll provide a brief keyword map)
+
+— MY RELEVANT EXPERIENCE —
+
+5+ years building WordPress and WooCommerce sites
+100+ projects delivered (many hospitality, property, and service businesses)
+Grew organic traffic 120–300% for clients through combined WP dev + SEO
+Core Web Vitals and PageSpeed optimization on every build
+
+— MY QUOTE —
+
+One-off design & development + full SEO setup: £2,800
+Optional monthly maintenance + SEO: £200/month
+Timeline: 3–4 weeks from brief approval
+
+I'm happy to share 3 live portfolio URLs from service/property businesses. If this fits your budget, I'd love a 20-minute call to align on direction before I send a formal scope.
+
+Best regards,
+Fahad Latif
+WordPress Developer & SEO Expert | 5 Years | 100+ Projects
+Upwork: $20/hr | Fiverr: fahad_mian</pre>
+    </div>
+  </div>
+
+  <div class="email-card">
+    <div class="email-header">
+      <h4>02 · Drinks by Kingpin — Technical SEO One-Off</h4>
+      <span class="source">PeoplePerHour Proposal</span>
+    </div>
+    <div class="email-body">
+      <div class="email-meta">
+        <span class="label">To:</span><span class="value">Drinks by Kingpin (via PPH)</span>
+        <span class="label">Re:</span><span class="value">Technical SEO Specialist – One-off Setup for drinksbykingpin.com</span>
+        <span class="label">Budget:</span><span class="value">Fixed Price (your quote)</span>
+        <span class="label">Channel:</span><span class="value">PeoplePerHour Project Proposal</span>
+      </div>
+<pre>Hello,
+
+I reviewed drinksbykingpin.com before applying — here's what I see and exactly how I'll fix it.
+
+— WHAT I'LL DELIVER —
+
+1. Yoast SEO configuration: meta titles, descriptions, OG tags, breadcrumbs, XML sitemap generation
+2. XML sitemap: create, validate, and submit to Google Search Console
+3. GSC property verification (HTML tag + DNS methods, your preference)
+4. Indexing audit: identify noindex tags, blocked URLs, crawl errors — and fix them
+5. robots.txt review and correction
+6. Basic technical SEO audit report: I'll flag your top 5 issues with clear recommendations
+
+— TURNAROUND —
+
+I can complete this within 2–3 business days of receiving WordPress admin + GSC access.
+
+— WHY ME —
+
+5 years WordPress + Technical SEO experience
+Delivered 100+ WordPress projects with full GSC/Sitemap setups
+I include a short written report so you know exactly what was done and why
+
+Fixed price quote for the full scope above: £195
+
+Let me know if you'd like to proceed — I can start immediately.
+
+Best regards,
+Fahad Latif
+WordPress Developer & SEO Expert | fahad_mian (Fiverr) | Upwork Top-Rated $20/hr</pre>
+    </div>
+  </div>
+
+  <div class="email-card">
+    <div class="email-header">
+      <h4>03 · UK B2B Platform — 3-Month Technical SEO Retainer</h4>
+      <span class="source">PeoplePerHour Proposal</span>
+    </div>
+    <div class="email-body">
+      <div class="email-meta">
+        <span class="label">To:</span><span class="value">UK B2B Digital Platform (via PPH)</span>
+        <span class="label">Re:</span><span class="value">3-Month Technical SEO Engagement – Geo Landing Page Architecture</span>
+        <span class="label">Budget:</span><span class="value">£400/month × 3 months</span>
+        <span class="label">Channel:</span><span class="value">PeoplePerHour Project Proposal</span>
+      </div>
+<pre>Hello,
+
+Your brief is one of the most clearly scoped Technical SEO projects I've seen — and I'm exactly the kind of consultant you're looking for. Here's why:
+
+I'm not a backlink reseller. I'm a Technical SEO specialist with 5 years of experience in site architecture, Core Web Vitals optimization, schema implementation, and structured content strategy for scalable WordPress sites.
+
+— HOW I'D APPROACH YOUR PROJECT —
+
+PHASE 1 (Weeks 1–4): Audit & Architecture
+Full URL structure audit for 25-50 geo-intent landing pages
+Crawl budget + robots.txt + canonical validation
+Cannibalisation risk analysis across all planned pages
+Internal linking strategy for geo cluster
+Schema templates (FAQ, Organisation, Breadcrumb)
+Geo keyword mapping (commercial + high-intent per location)
+Core Web Vitals mobile review
+
+PHASE 2 (Months 2–3): Implementation Support
+Review all newly published geo pages as they go live
+Ongoing keyword expansion per cluster
+Internal linking refinements
+GSC performance tracking (impressions, CTR, rankings per page)
+Monthly reporting — not generic, tailored to your KPIs
+
+— WHAT I WON'T DO —
+
+Generic PDF reports with no action steps
+Recommendations that ignore your regulated-sector constraints
+Backlinks, shortcuts, or tactics that create risk
+
+— DELIVERABLE QUALITY —
+
+Everything I produce is actionable. I deliver structured Google Docs/Sheets reports, not slide decks. You can implement or hand off every recommendation directly.
+
+I'm available to start within 48 hours. Happy to discuss your sector and constraints on a 20-minute discovery call first.
+
+Proposal: £400/month × 3 months as specified.
+
+Best regards,
+Fahad Latif
+Technical SEO Specialist & WordPress Developer | 5+ Years | 100+ Projects
+Fiverr: fahad_mian | Upwork: $20/hr</pre>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <strong>B2B Lead Generation Report — Fahad Latif (Leo)</strong> · Generated March 23, 2026 · Sources: PeoplePerHour, Freelancer.com<br>
+  All leads verified live from public job postings. Contact info sourced from public platforms only.
+</div>
+
+</body>
+</html>
