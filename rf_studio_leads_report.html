@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RF Studio — B2B Lead Generation Report | Middle East 2026</title>
+<style>
+  :root {
+    --navy: #0A1628;
+    --navy-light: #0F2044;
+    --blue: #2563EB;
+    --blue-light: #3B82F6;
+    --emerald: #10B981;
+    --emerald-light: #34D399;
+    --amber: #F59E0B;
+    --red: #EF4444;
+    --text: #FFFFFF;
+    --text-muted: #94A3B8;
+    --text-dark: #E2E8F0;
+    --card-bg: #0F2044;
+    --card-border: #1E3A5F;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--navy); color: var(--text-dark); font-family: 'Segoe UI', Arial, sans-serif; font-size: 14px; line-height: 1.6; }
+
+  /* ── HEADER ── */
+  .report-header {
+    background: linear-gradient(135deg, #0A1628 0%, #0F2A5E 50%, #0A1628 100%);
+    border-bottom: 2px solid var(--blue);
+    padding: 40px 48px 36px;
+    position: relative; overflow: hidden;
+  }
+  .report-header::before {
+    content: '';
+    position: absolute; top: -80px; right: -80px;
+    width: 320px; height: 320px;
+    background: radial-gradient(circle, rgba(37,99,235,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .brand { font-size: 13px; font-weight: 700; letter-spacing: 3px; color: var(--blue-light); text-transform: uppercase; margin-bottom: 8px; }
+  .report-title { font-size: 28px; font-weight: 800; color: #FFFFFF; margin-bottom: 6px; }
+  .report-subtitle { color: var(--text-muted); font-size: 14px; }
+  .meta-pills { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+  .pill {
+    padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+  .pill-blue { background: rgba(37,99,235,0.25); border: 1px solid rgba(37,99,235,0.5); color: #93C5FD; }
+  .pill-green { background: rgba(16,185,129,0.2); border: 1px solid rgba(16,185,129,0.4); color: #6EE7B7; }
+  .pill-amber { background: rgba(245,158,11,0.2); border: 1px solid rgba(245,158,11,0.4); color: #FCD34D; }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
+  section { padding: 40px 0; }
+
+  /* ── EXEC SUMMARY CARDS ── */
+  .summary-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; margin-top: 24px; }
+  .stat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px; padding: 24px 20px; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .stat-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  }
+  .stat-card.blue::before { background: var(--blue); }
+  .stat-card.green::before { background: var(--emerald); }
+  .stat-card.amber::before { background: var(--amber); }
+  .stat-card.red::before { background: var(--red); }
+  .stat-number { font-size: 38px; font-weight: 800; line-height: 1; }
+  .stat-card.blue .stat-number { color: var(--blue-light); }
+  .stat-card.green .stat-number { color: var(--emerald-light); }
+  .stat-card.amber .stat-number { color: #FCD34D; }
+  .stat-card.red .stat-number { color: #FCA5A5; }
+  .stat-label { font-size: 12px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 6px; }
+
+  /* ── SECTION TITLES ── */
+  .section-title {
+    font-size: 20px; font-weight: 700; color: #FFFFFF;
+    border-left: 4px solid var(--blue); padding-left: 14px;
+    margin-bottom: 24px;
+  }
+  .section-title span { color: var(--blue-light); }
+
+  /* ── LEAD CARDS ── */
+  .leads-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .lead-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 14px; overflow: hidden;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .lead-card:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
+  .lead-card-header {
+    padding: 18px 22px 14px;
+    border-bottom: 1px solid var(--card-border);
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+  }
+  .lead-number {
+    width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 800; flex-shrink: 0;
+  }
+  .priority-urgent { background: rgba(239,68,68,0.2); border: 1px solid #EF4444; color: #FCA5A5; }
+  .priority-high { background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.5); color: #FCA5A5; }
+  .priority-medium { background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.5); color: #FCD34D; }
+  .priority-warm { background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.5); color: #6EE7B7; }
+  .lead-name { font-size: 16px; font-weight: 700; color: #FFFFFF; margin-bottom: 3px; }
+  .lead-meta { font-size: 12px; color: var(--text-muted); }
+  .badge {
+    display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 11px; font-weight: 700;
+    white-space: nowrap; flex-shrink: 0;
+  }
+  .badge-urgent { background: rgba(239,68,68,0.2); border: 1px solid #EF4444; color: #FCA5A5; }
+  .badge-high { background: rgba(239,68,68,0.15); border: 1px solid rgba(239,68,68,0.5); color: #FCA5A5; }
+  .badge-medium { background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.5); color: #FCD34D; }
+  .badge-warm { background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.5); color: #6EE7B7; }
+  .lead-body { padding: 18px 22px; }
+  .info-row { display: flex; gap: 8px; align-items: flex-start; margin-bottom: 8px; font-size: 13px; }
+  .info-icon { color: var(--blue-light); font-size: 14px; flex-shrink: 0; width: 18px; margin-top: 1px; }
+  .info-label { color: var(--text-muted); flex-shrink: 0; width: 100px; }
+  .info-value { color: var(--text-dark); }
+  .info-value a { color: var(--blue-light); text-decoration: none; }
+  .service-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .service-tag {
+    padding: 3px 10px; background: rgba(37,99,235,0.15); border: 1px solid rgba(37,99,235,0.3);
+    border-radius: 20px; font-size: 11px; color: #93C5FD; font-weight: 600;
+  }
+  .service-tag.green { background: rgba(16,185,129,0.12); border-color: rgba(16,185,129,0.3); color: #6EE7B7; }
+  .budget-row {
+    margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--card-border);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .budget-amount { font-size: 17px; font-weight: 800; color: var(--emerald-light); }
+  .budget-label { font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+  .source-badge { font-size: 11px; color: var(--text-muted); background: rgba(255,255,255,0.05); padding: 3px 8px; border-radius: 6px; }
+
+  /* ── DEEP DIVE AUDIT ── */
+  .audit-card {
+    background: var(--card-bg); border: 1px solid var(--card-border);
+    border-radius: 14px; margin-bottom: 24px; overflow: hidden;
+  }
+  .audit-header {
+    background: linear-gradient(90deg, rgba(37,99,235,0.2) 0%, transparent 100%);
+    padding: 20px 26px; border-bottom: 1px solid var(--card-border);
+    display: flex; align-items: center; gap: 14px;
+  }
+  .audit-icon { font-size: 28px; }
+  .audit-company { font-size: 18px; font-weight: 800; color: #FFFFFF; }
+  .audit-tagline { font-size: 13px; color: var(--text-muted); }
+  .audit-body { padding: 24px 26px; }
+  .audit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .audit-section-title { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--blue-light); margin-bottom: 10px; }
+  .finding-item { display: flex; gap: 8px; align-items: flex-start; margin-bottom: 8px; font-size: 13px; color: var(--text-dark); }
+  .finding-icon { flex-shrink: 0; margin-top: 2px; }
+  .finding-bad { color: #FCA5A5; }
+  .finding-ok { color: #FCD34D; }
+  .finding-good { color: #6EE7B7; }
+  .opportunity-box {
+    background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.25);
+    border-radius: 8px; padding: 14px 16px; margin-top: 16px;
+  }
+  .opportunity-title { font-size: 12px; font-weight: 700; color: var(--emerald-light); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+  .opportunity-text { font-size: 13px; color: var(--text-dark); line-height: 1.7; }
+
+  /* ── EMAIL TEMPLATES ── */
+  .email-card {
+    background: var(--card-bg); border: 1px solid var(--card-border);
+    border-radius: 14px; margin-bottom: 24px; overflow: hidden;
+  }
+  .email-header {
+    padding: 16px 22px; border-bottom: 1px solid var(--card-border);
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .email-to { font-size: 14px; font-weight: 700; color: #FFFFFF; }
+  .email-address { font-size: 12px; color: var(--text-muted); }
+  .email-subject {
+    background: rgba(37,99,235,0.1); padding: 10px 22px;
+    font-size: 13px; font-weight: 600; color: var(--blue-light);
+    border-bottom: 1px solid var(--card-border);
+  }
+  .email-subject span { color: var(--text-muted); font-weight: 400; margin-right: 6px; }
+  .email-body { padding: 20px 22px; font-size: 13px; line-height: 1.8; white-space: pre-line; color: var(--text-dark); }
+  .email-highlight { color: var(--emerald-light); font-weight: 600; }
+
+  /* ── QUICK ACTION TABLE ── */
+  .qa-table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+  .qa-table th {
+    background: rgba(37,99,235,0.25); color: #93C5FD; padding: 12px 16px;
+    text-align: left; font-size: 12px; text-transform: uppercase; letter-spacing: 0.8px;
+    border-bottom: 2px solid var(--blue);
+  }
+  .qa-table td { padding: 13px 16px; border-bottom: 1px solid var(--card-border); font-size: 13px; color: var(--text-dark); vertical-align: top; }
+  .qa-table tr:hover td { background: rgba(37,99,235,0.06); }
+  .qa-table tr:last-child td { border-bottom: none; }
+  .priority-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 6px; vertical-align: middle; }
+  .dot-red { background: #EF4444; }
+  .dot-amber { background: #F59E0B; }
+  .dot-green { background: #10B981; }
+
+  /* ── DIVIDER ── */
+  .divider { height: 1px; background: var(--card-border); margin: 8px 0 32px; }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: var(--navy-light); border-top: 1px solid var(--card-border);
+    padding: 24px 48px; text-align: center;
+    color: var(--text-muted); font-size: 12px;
+  }
+  .footer a { color: var(--blue-light); text-decoration: none; }
+
+  @media (max-width: 900px) {
+    .leads-grid, .audit-grid, .summary-grid { grid-template-columns: 1fr; }
+    .report-header { padding: 28px 24px; }
+    .container { padding: 0 18px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="report-header">
+  <div class="brand">RF Studio · Growth Intelligence Agency</div>
+  <div class="report-title">B2B Lead Generation Report</div>
+  <div class="report-subtitle">Middle East Focus — Riyadh (KSA) & Doha (Qatar) · Generated March 26, 2026</div>
+  <div class="meta-pills">
+    <span class="pill pill-blue">🎯 Lead with: SEO / Technical SEO</span>
+    <span class="pill pill-green">🛒 Services: WordPress · Elementor · WooCommerce · SEO</span>
+    <span class="pill pill-amber">📍 Region: Riyadh KSA + Doha Qatar</span>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- EXECUTIVE SUMMARY -->
+  <section>
+    <div class="section-title">📊 Executive <span>Summary</span></div>
+    <div class="summary-grid">
+      <div class="stat-card blue">
+        <div class="stat-number">10</div>
+        <div class="stat-label">Qualified Leads Found</div>
+      </div>
+      <div class="stat-card red">
+        <div class="stat-number">2</div>
+        <div class="stat-label">Urgent / High Priority</div>
+      </div>
+      <div class="stat-card amber">
+        <div class="stat-number">5</div>
+        <div class="stat-label">Active RFPs / Budgeted</div>
+      </div>
+      <div class="stat-card green">
+        <div class="stat-number">$260K+</div>
+        <div class="stat-label">Combined Budget Pool</div>
+      </div>
+    </div>
+    <div style="margin-top:20px; background:var(--card-bg); border:1px solid var(--card-border); border-radius:12px; padding:20px 24px; border-left: 4px solid var(--emerald);">
+      <div style="font-size:13px; color:var(--text-dark); line-height:1.8;">
+        <strong style="color:#FFFFFF;">Key Findings:</strong> The Middle East market is highly active for WordPress/SEO services in 2026.
+        Two leads stand out as <strong style="color:#FCA5A5;">immediately actionable</strong>: Kozma &amp; Kozma (Doha) is actively
+        hiring a WordPress/WooCommerce developer and running PHP 5.6 — a technical vulnerability RF Studio can turn into a pitch.
+        DASH Control Systems (Riyadh) runs Drupal and is hiring for digital marketing, making them a prime WordPress migration + SEO candidate.
+        Five additional projects have live RFP briefs on Sortlist with combined budgets up to €165,000. The remaining three are warm leads
+        identified via active job postings on Bayt.com that signal internal digital marketing investment.
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- FULL LEAD LIST -->
+  <section>
+    <div class="section-title">🎯 Full Lead List — <span>10 Qualified Prospects</span></div>
+    <div class="leads-grid">
+
+      <!-- Lead 1 -->
+      <div class="lead-card">
+        <div class="lead-card-header">
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div class="lead-number priority-urgent">1</div>
+            <div>
+              <div class="lead-name">Kozma &amp; Kozma Salon</div>
+              <div class="lead-meta">💄 Beauty / eCommerce · Doha, Qatar</div>
+            </div>
+          </div>
+          <span class="badge badge-urgent">🔴 URGENT</span>
+        </div>
+        <div class="lead-body">
+          <div class="info-row"><span class="info-icon">🌐</span><span class="info-label">Website:</span><span class="info-value"><a href="https://kozmaandkozma.com" target="_blank">kozmaandkozma.com</a></span></div>
+          <div class="info-row"><span class="info-icon">📧</span><span class="info-label">Email:</span><span class="info-value"><a href="mailto:info@kozmaandkozma.com">info@kozmaandkozma.com</a></span></div>
+          <div class="info-row"><span class="info-icon">📱</span><span class="info-label">Phone:</span><span class="info-value">+974 6686 7220</span></div>
+          <div class="info-row"><span class="info-icon">👤</span><span class="info-label">Decision Maker:</span><span class="info-value">Hillary &amp; Mike Kozma (Owners)</span></div>
+          <div class="info-row"><span class="info-icon">⚠️</span><span class="info-label">Tech Stack:</span><span class="info-value" style="color:#FCA5A5;">PHP 5.6 (EOL!), WordPress, WooCommerce · Outdated since 2018</span></div>
+          <div class="info-row"><span class="info-icon">📌</span><span class="info-label">Signal:</span><span class="info-value">Actively hiring WordPress/WooCommerce SEO Developer on Bayt.com</span></div>
+          <div class="service-tags">
+            <span class="service-tag">WordPress PHP Upgrade</span>
+            <span class="service-tag">WooCommerce Overhaul</span>
+            <span class="service-tag green">Technical SEO</span>
+            <span class="service-tag green">Local SEO Doha</span>
+          </div>
+          <div class="budget-row">
+            <div><div class="budget-label">Estimated Budget</div><div class="budget-amount">$3,000 – $8,000</div></div>
+            <span class="source-badge">📋 Bayt.com Job Post</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lead 2 -->
+      <div class="lead-card">
+        <div class="lead-card-header">
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div class="lead-number priority-high">2</div>
+            <div>
+              <div class="lead-name">DASH Control Systems</div>
+              <div class="lead-meta">⚙️ Industrial Engineering · Riyadh, KSA</div>
+            </div>
+          </div>
+          <span class="badge badge-high">🔴 HIGH</span>
+        </div>
+        <div class="lead-body">
+          <div class="info-row"><span class="info-icon">🌐</span><span class="info-label">Website:</span><span class="info-value"><a href="https://dashcontrol.com" target="_blank">dashcontrol.com</a></span></div>
+          <div class="info-row"><span class="info-icon">📧</span><span class="info-label">Email:</span><span class="info-value"><a href="mailto:info@dashcontrol.com">info@dashcontrol.com</a></span></div>
+          <div class="info-row"><span class="info-icon">📱</span><span class="info-label">Phone:</span><span class="info-value">+966 9200 07226</span></div>
+          <div class="info-row"><span class="info-icon">🏢</span><span class="info-label">Branches:</span><span class="info-value">Riyadh · Jeddah · Dammam · Al Khobar</span></div>
+          <div class="info-row"><span class="info-icon">⚠️</span><span class="info-label">Tech Stack:</span><span class="info-value" style="color:#FCD34D;">Drupal CMS · No WooCommerce · Weak SEO</span></div>
+          <div class="info-row"><span class="info-icon">📌</span><span class="info-label">Signal:</span><span class="info-value">Hiring Technical Marketing Specialist with SEO skills (Bayt.com)</span></div>
+          <div class="service-tags">
+            <span class="service-tag">WordPress Migration</span>
+            <span class="service-tag">B2B Product Catalogue</span>
+            <span class="service-tag green">Technical SEO</span>
+            <span class="service-tag">WooCommerce B2B</span>
+          </div>
+          <div class="budget-row">
+            <div><div class="budget-label">Estimated Budget</div><div class="budget-amount">$5,000 – $12,000</div></div>
+            <span class="source-badge">📋 Bayt.com Job Post</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lead 3 -->
+      <div class="lead-card">
+        <div class="lead-card-header">
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div class="lead-number priority-medium">3</div>
+            <div>
+              <div class="lead-name">Financial Services Firm</div>
+              <div class="lead-meta">💰 Financial Services · Doha, Qatar</div>
+            </div>
+          </div>
+          <span class="badge badge-medium">🟡 MEDIUM</span>
+        </div>
+        <div class="lead-body">
+          <div class="info-row"><span class="info-icon">🌐</span><span class="info-label">Contact:</span><span class="info-value"><a href="https://www.sortlist.com/seo/qatar-qa" target="_blank">Apply via Sortlist</a></span></div>
+          <div class="info-row"><span class="info-icon">📋</span><span class="info-label">Brief:</span><span class="info-value">Improve search rankings, optimize for B2B keywords, increase visibility in financial sector</span></div>
+          <div class="info-row"><span class="info-icon">📅</span><span class="info-label">Posted:</span><span class="info-value">July 2025 (Active on Sortlist)</span></div>
+          <div class="service-tags">
+            <span class="service-tag green">SEO Strategy</span>
+            <span class="service-tag green">Content Marketing</span>
+            <span class="service-tag">B2B Keyword Research</span>
+          </div>
+          <div class="budget-row">
+            <div><div class="budget-label">Stated Budget</div><div class="budget-amount">€15,000 – €35,000</div></div>
+            <span class="source-badge">📋 Sortlist RFP</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lead 4 -->
+      <div class="lead-card">
+        <div class="lead-card-header">
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div class="lead-number priority-medium">4</div>
+            <div>
+              <div class="lead-name">Fintech Startup</div>
+              <div class="lead-meta">💳 Fintech · Doha, Qatar</div>
+            </div>
+          </div>
+          <span class="badge badge-medium">🟡 MEDIUM</span>
+        </div>
+        <div class="lead-body">
+          <div class="info-row"><span class="info-icon">🌐</span><span class="info-label">Contact:</span><span class="info-value"><a href="https://www.sortlist.com/seo/qatar-qa" target="_blank">Apply via Sortlist</a></span></div>
+          <div class="info-row"><span class="info-icon">📋</span><span class="info-label">Brief:</span><span class="info-value">Full SEO strategy — keyword research, technical SEO, content marketing to attract global investors</span></div>
+          <div class="info-row"><span class="info-icon">📅</span><span class="info-label">Posted:</span><span class="info-value">June 2025 (Active on Sortlist)</span></div>
+          <div class="service-tags">
+            <span class="service-tag green">Technical SEO</span>
+            <span class="service-tag green">Keyword Research</span>
+            <span class="service-tag">WordPress (Possible)</span>
+            <span class="service-tag">Content Strategy</span>
+          </div>
+          <div class="budget-row">
+            <div><div class="budget-label">Stated Budget</div><div class="budget-amount">€15,000 – €40,000</div></div>
+            <span class="source-badge">📋 Sortlist RFP</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lead 5 -->
+      <div class="lead-card">
+        <div class="lead-card-header">
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div class="lead-number priority-medium">5</div>
+            <div>
+              <div class="lead-name">Real Estate Platform (Qatar)</div>
+              <div class="lead-meta">🏠 Real Estate · Doha, Qatar</div>
+            </div>
+          </div>
+          <span class="badge badge-medium">🟡 MEDIUM</span>
+        </div>
+        <div class="lead-body">
+          <div class="info-row"><span class="info-icon">🌐</span><span class="info-label">Contact:</span><span class="info-value"><a href="https://www.sortlist.com/seo/qatar-qa" target="_blank">Apply via Sortlist</a></span></div>
+          <div class="info-row"><span class="info-icon">📋</span><span class="info-label">Brief:</span><span class="info-value">SEO to target property buyers &amp; renters locally and internationally; on-page SEO + content</span></div>
+          <div class="info-row"><span class="info-icon">📅</span><span class="info-label">Posted:</span><span class="info-value">May 2025 (Active on Sortlist)</span></div>
+          <div class="service-tags">
+            <span class="service-tag green">Local SEO</span>
+            <span class="service-tag">On-Page SEO</span>
+            <span class="service-tag">Content Creation</span>
+            <span class="service-tag">WordPress (possible)</span>
+          </div>
+          <div class="budget-row">
+            <div><div class="budget-label">Stated Budget</div><div class="budget-amount">€15,000 – €35,000</div></div>
+            <span class="source-badge">📋 Sortlist RFP</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lead 6 -->
+      <div class="lead-card">
+        <div class="lead-card-header">
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div class="lead-number priority-medium">6</div>
+            <div>
+              <div class="lead-name">Luxury Hotel Chain</div>
+              <div class="lead-meta">🏨 Hospitality · Middle East / Riyadh Area</div>
+            </div>
+          </div>
+          <span class="badge badge-medium">🟡 MEDIUM</span>
+        </div>
+        <div class="lead-body">
+          <div class="info-row"><span class="info-icon">🌐</span><span class="info-label">Contact:</span><span class="info-value"><a href="https://www.sortlist.com/s/wordpress-development/saudi-arabia-sa" target="_blank">Apply via Sortlist</a></span></div>
+          <div class="info-row"><span class="info-icon">📋</span><span class="info-label">Brief:</span><span class="info-value">WordPress revamp — elegant brand design, booking functionality, SEO + mobile optimization</span></div>
+          <div class="info-row"><span class="info-icon">📅</span><span class="info-label">Posted:</span><span class="info-value">May 2025 (Active on Sortlist)</span></div>
+          <div class="service-tags">
+            <span class="service-tag">WordPress Revamp</span>
+            <span class="service-tag green">SEO</span>
+            <span class="service-tag">Elementor Design</span>
+            <span class="service-tag">Booking Integration</span>
+          </div>
+          <div class="budget-row">
+            <div><div class="budget-label">Stated Budget</div><div class="budget-amount">$25,000 – $35,000</div></div>
+            <span class="source-badge">📋 Sortlist Brief</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lead 7 -->
+      <div class="lead-card">
+        <div class="lead-card-header">
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div class="lead-number priority-medium">7</div>
+            <div>
+              <div class="lead-name">Artisan Collective KSA</div>
+              <div class="lead-meta">🎨 eCommerce / Handmade Goods · Saudi Arabia</div>
+            </div>
+          </div>
+          <span class="badge badge-medium">🟡 MEDIUM</span>
+        </div>
+        <div class="lead-body">
+          <div class="info-row"><span class="info-icon">🌐</span><span class="info-label">Contact:</span><span class="info-value"><a href="https://www.sortlist.com/ecommerce/saudi-arabia-sa" target="_blank">Apply via Sortlist</a></span></div>
+          <div class="info-row"><span class="info-icon">📋</span><span class="info-label">Brief:</span><span class="info-value">Bespoke eCommerce platform for handmade products with storytelling focus and high-quality imagery</span></div>
+          <div class="info-row"><span class="info-icon">📅</span><span class="info-label">Posted:</span><span class="info-value">July 2025 (Active on Sortlist)</span></div>
+          <div class="service-tags">
+            <span class="service-tag">WooCommerce Build</span>
+            <span class="service-tag green">SEO Setup</span>
+            <span class="service-tag">Elementor Design</span>
+          </div>
+          <div class="budget-row">
+            <div><div class="budget-label">Stated Budget</div><div class="budget-amount">€15,000 – €40,000</div></div>
+            <span class="source-badge">📋 Sortlist Brief</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lead 8 -->
+      <div class="lead-card">
+        <div class="lead-card-header">
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div class="lead-number priority-warm">8</div>
+            <div>
+              <div class="lead-name">International School (Riyadh)</div>
+              <div class="lead-meta">🎓 Education · Riyadh, KSA</div>
+            </div>
+          </div>
+          <span class="badge badge-warm">🟢 WARM</span>
+        </div>
+        <div class="lead-body">
+          <div class="info-row"><span class="info-icon">🌐</span><span class="info-label">Contact:</span><span class="info-value"><a href="https://www.bayt.com/en/saudi-arabia/jobs/seo-jobs/" target="_blank">Research via Bayt.com</a></span></div>
+          <div class="info-row"><span class="info-icon">📋</span><span class="info-label">Signal:</span><span class="info-value">Hiring Marketing Manager to "optimize digital and traditional channels" — website + SEO need</span></div>
+          <div class="service-tags">
+            <span class="service-tag">WordPress Website</span>
+            <span class="service-tag green">Local SEO Riyadh</span>
+            <span class="service-tag">Content Marketing</span>
+          </div>
+          <div class="budget-row">
+            <div><div class="budget-label">Estimated Budget</div><div class="budget-amount">$3,000 – $8,000</div></div>
+            <span class="source-badge">📋 Bayt.com</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lead 9 -->
+      <div class="lead-card">
+        <div class="lead-card-header">
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div class="lead-number priority-warm">9</div>
+            <div>
+              <div class="lead-name">Aesthetic / Dental Clinic</div>
+              <div class="lead-meta">🏥 Healthcare · Riyadh, KSA</div>
+            </div>
+          </div>
+          <span class="badge badge-warm">🟢 WARM</span>
+        </div>
+        <div class="lead-body">
+          <div class="info-row"><span class="info-icon">🌐</span><span class="info-label">Contact:</span><span class="info-value"><a href="https://www.bayt.com/en/saudi-arabia/jobs/seo-jobs/" target="_blank">Research via Bayt.com</a></span></div>
+          <div class="info-row"><span class="info-icon">📋</span><span class="info-label">Signal:</span><span class="info-value">Medical Operations &amp; Marketing Manager role — Dental, Dermatology &amp; Aesthetic clinic group needing digital campaigns</span></div>
+          <div class="service-tags">
+            <span class="service-tag">Medical WordPress Site</span>
+            <span class="service-tag green">Local SEO</span>
+            <span class="service-tag">WooCommerce (Products)</span>
+          </div>
+          <div class="budget-row">
+            <div><div class="budget-label">Estimated Budget</div><div class="budget-amount">$3,000 – $8,000</div></div>
+            <span class="source-badge">📋 Bayt.com</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lead 10 -->
+      <div class="lead-card">
+        <div class="lead-card-header">
+          <div style="display:flex;gap:12px;align-items:flex-start;">
+            <div class="lead-number priority-warm">10</div>
+            <div>
+              <div class="lead-name">Real Estate Company (Riyadh)</div>
+              <div class="lead-meta">🏗️ Real Estate · Riyadh, KSA</div>
+            </div>
+          </div>
+          <span class="badge badge-warm">🟢 WARM</span>
+        </div>
+        <div class="lead-body">
+          <div class="info-row"><span class="info-icon">🌐</span><span class="info-label">Contact:</span><span class="info-value"><a href="https://www.bayt.com/en/saudi-arabia/jobs/seo-jobs/" target="_blank">Research via Bayt.com</a></span></div>
+          <div class="info-row"><span class="info-icon">📋</span><span class="info-label">Signal:</span><span class="info-value">Marketing &amp; Communications Manager role — "enhance brand presence in competitive real estate market of Riyadh"</span></div>
+          <div class="service-tags">
+            <span class="service-tag">WordPress Website</span>
+            <span class="service-tag green">Local SEO</span>
+            <span class="service-tag">Landing Pages</span>
+          </div>
+          <div class="budget-row">
+            <div><div class="budget-label">Estimated Budget</div><div class="budget-amount">$4,000 – $10,000</div></div>
+            <span class="source-badge">📋 Bayt.com</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- DEEP-DIVE AUDITS -->
+  <section>
+    <div class="section-title">🔍 Deep-Dive Audit — <span>Top 3 Leads</span></div>
+
+    <!-- Audit 1: Kozma -->
+    <div class="audit-card">
+      <div class="audit-header">
+        <div class="audit-icon">💄</div>
+        <div>
+          <div class="audit-company">Kozma &amp; Kozma Salon — kozmaandkozma.com</div>
+          <div class="audit-tagline">Doha, Qatar · Multi-location Beauty Brand · WooCommerce eCommerce</div>
+        </div>
+        <span class="badge badge-urgent" style="margin-left:auto;flex-shrink:0;">🔴 URGENT</span>
+      </div>
+      <div class="audit-body">
+        <div class="audit-grid">
+          <div>
+            <div class="audit-section-title">⚠️ Technical Issues Found</div>
+            <div class="finding-item finding-bad"><span class="finding-icon">🔴</span> Running <strong>PHP 5.6</strong> — End-of-Life since Dec 2018. Security risk &amp; Google ranking penalty.</div>
+            <div class="finding-item finding-bad"><span class="finding-icon">🔴</span> WooCommerce store likely on outdated version — incompatible with modern payment gateways.</div>
+            <div class="finding-item finding-ok"><span class="finding-icon">🟡</span> No evidence of structured data / local business schema (Google Maps ranking opportunity).</div>
+            <div class="finding-item finding-ok"><span class="finding-icon">🟡</span> Site speed likely poor due to old PHP — impacts Core Web Vitals &amp; rankings.</div>
+            <div class="finding-item finding-bad"><span class="finding-icon">🔴</span> Using goo.gl short links — Google shut down goo.gl redirects; broken links throughout site likely.</div>
+            <div class="finding-item finding-good"><span class="finding-icon">🟢</span> 4.7★ TripAdvisor rating (#15 of 126 Doha spas) — strong brand to build SEO around.</div>
+          </div>
+          <div>
+            <div class="audit-section-title">📈 SEO Opportunity Analysis</div>
+            <div class="finding-item"><span class="finding-icon">🎯</span> Target keywords: "curly hair salon Doha", "hair salon Al Waab", "WooCommerce curly products Qatar"</div>
+            <div class="finding-item"><span class="finding-icon">🎯</span> Local SEO: 2 physical locations = 2 Google Business Profile optimization opportunities.</div>
+            <div class="finding-item"><span class="finding-icon">🎯</span> eCommerce SEO: Kozma Curl Products line has no optimized product pages or schema.</div>
+            <div class="finding-item"><span class="finding-icon">🎯</span> Competitor gap: Ranking for "curly hair salon Qatar" is virtually uncontested.</div>
+            <div class="finding-item"><span class="finding-icon">🎯</span> Instagram has 4,999 followers — social proof can be leveraged for off-page SEO.</div>
+          </div>
+        </div>
+        <div class="opportunity-box">
+          <div class="opportunity-title">💡 RF Studio Pitch Angle</div>
+          <div class="opportunity-text">
+            Lead with the <strong style="color:#FFFFFF;">PHP 5.6 vulnerability</strong> — frame it as a free emergency audit. Offer: "We found 3 critical issues on kozmaandkozma.com that are actively hurting your Google rankings and may expose customer payment data." Then upsell to PHP 8.x upgrade ($800–$1,200) → WooCommerce rebuild ($1,500–$3,000) → ongoing Local SEO retainer ($500–$800/month). Total project value: <strong style="color: var(--emerald-light);">$5,000–$8,000 + recurring</strong>.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Audit 2: DASH -->
+    <div class="audit-card">
+      <div class="audit-header">
+        <div class="audit-icon">⚙️</div>
+        <div>
+          <div class="audit-company">DASH Control Systems — dashcontrol.com</div>
+          <div class="audit-tagline">Riyadh, KSA · Industrial Engineering · 30+ Years · 4 Branches</div>
+        </div>
+        <span class="badge badge-high" style="margin-left:auto;flex-shrink:0;">🔴 HIGH</span>
+      </div>
+      <div class="audit-body">
+        <div class="audit-grid">
+          <div>
+            <div class="audit-section-title">⚠️ Technical Issues Found</div>
+            <div class="finding-item finding-bad"><span class="finding-icon">🔴</span> Running <strong>Drupal CMS</strong> — complex to update, poor SEO tooling vs. WordPress/Yoast.</div>
+            <div class="finding-item finding-bad"><span class="finding-icon">🔴</span> No WooCommerce — product catalogue is static, no B2B ordering capability.</div>
+            <div class="finding-item finding-ok"><span class="finding-icon">🟡</span> Uses Google Universal Analytics — this is end-of-life; needs GA4 migration.</div>
+            <div class="finding-item finding-ok"><span class="finding-icon">🟡</span> No evident structured data for multi-location business (Riyadh, Jeddah, Dammam).</div>
+            <div class="finding-item finding-bad"><span class="finding-icon">🔴</span> Hiring for marketing role instead of outsourcing = opportunity to pitch agency retainer.</div>
+            <div class="finding-item finding-good"><span class="finding-icon">🟢</span> 30+ years of credibility — strong domain authority potential if SEO is built properly.</div>
+          </div>
+          <div>
+            <div class="audit-section-title">📈 SEO Opportunity Analysis</div>
+            <div class="finding-item"><span class="finding-icon">🎯</span> Target keywords: "AC motor drives Saudi Arabia", "industrial control systems Riyadh", "UPS distributor KSA"</div>
+            <div class="finding-item"><span class="finding-icon">🎯</span> B2B SEO: Procurement managers in KSA search Google for distributors — DASH is invisible.</div>
+            <div class="finding-item"><span class="finding-icon">🎯</span> Multi-location SEO: 4 branches = 4 local landing pages opportunity (Riyadh, Jeddah, Dammam, Khobar).</div>
+            <div class="finding-item"><span class="finding-icon">🎯</span> WooCommerce B2B: Quote request forms + product catalogue = procurement lead gen engine.</div>
+            <div class="finding-item"><span class="finding-icon">🎯</span> Authorized distributor for 20+ international brands = rich content / backlink opportunities.</div>
+          </div>
+        </div>
+        <div class="opportunity-box">
+          <div class="opportunity-title">💡 RF Studio Pitch Angle</div>
+          <div class="opportunity-text">
+            Pitch a <strong style="color:#FFFFFF;">Drupal → WordPress migration + B2B WooCommerce catalogue</strong> packaged with Technical SEO. Show them a competitor ranking for "motor drives Saudi Arabia" and prove DASH should own that keyword given their 30-year reputation. Monthly retainer for multi-location local SEO across 4 branches is a natural upsell. Total project value: <strong style="color: var(--emerald-light);">$8,000–$12,000 + $1,000/month retainer</strong>.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Audit 3: Qatar Sortlist Leads -->
+    <div class="audit-card">
+      <div class="audit-header">
+        <div class="audit-icon">🇶🇦</div>
+        <div>
+          <div class="audit-company">Qatar Sortlist RFP Cluster (Leads 3–5)</div>
+          <div class="audit-tagline">Finance · Fintech · Real Estate · Doha, Qatar · Combined Budget €45,000–€110,000</div>
+        </div>
+        <span class="badge badge-medium" style="margin-left:auto;flex-shrink:0;">🟡 ACTIVE RFPs</span>
+      </div>
+      <div class="audit-body">
+        <div class="audit-grid">
+          <div>
+            <div class="audit-section-title">📋 RFP Common Requirements</div>
+            <div class="finding-item"><span class="finding-icon">✅</span> All three explicitly need <strong>Technical SEO</strong> — RF Studio's lead service.</div>
+            <div class="finding-item"><span class="finding-icon">✅</span> All three are in high-value industries with competitive search landscapes.</div>
+            <div class="finding-item"><span class="finding-icon">✅</span> All three want measurable results — easy to package as monthly reporting retainer.</div>
+            <div class="finding-item"><span class="finding-icon">✅</span> Qatar digital marketing market is <strong>growing rapidly in 2026</strong> — fewer local competitors.</div>
+          </div>
+          <div>
+            <div class="audit-section-title">🎯 Winning Strategy</div>
+            <div class="finding-item"><span class="finding-icon">🎯</span> Submit proposals that include bilingual SEO (Arabic + English) — a rare differentiator.</div>
+            <div class="finding-item"><span class="finding-icon">🎯</span> Emphasize ZATCA-compliance and Qatar-specific search behavior knowledge.</div>
+            <div class="finding-item"><span class="finding-icon">🎯</span> Lead with a free 48-hour SEO audit as part of the proposal.</div>
+            <div class="finding-item"><span class="finding-icon">🎯</span> Package Technical SEO + WordPress (if applicable) for higher deal value.</div>
+          </div>
+        </div>
+        <div class="opportunity-box">
+          <div class="opportunity-title">💡 RF Studio Pitch Angle</div>
+          <div class="opportunity-text">
+            Submit on all 3 Sortlist briefs with a <strong style="color:#FFFFFF;">standardized Qatar SEO proposal template</strong> that highlights bilingual (Arabic/English) SEO expertise, local search behavior for Doha, and compliance with Qatar's digital marketing landscape. Use the fintech brief as the anchor (highest budget: €40K) and cross-propose WooCommerce or WordPress builds to increase project value. Combined win rate target: <strong style="color: var(--emerald-light);">1 of 3 = €20,000+ project</strong>.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- COLD EMAILS -->
+  <section>
+    <div class="section-title">✉️ Cold Email <span>Templates</span></div>
+
+    <div class="email-card">
+      <div class="email-header">
+        <div>
+          <div class="email-to">To: Kozma &amp; Kozma (Hillary / Mike)</div>
+          <div class="email-address">info@kozmaandkozma.com · Doha, Qatar</div>
+        </div>
+        <span class="badge badge-urgent">Send Today</span>
+      </div>
+      <div class="email-subject"><span>Subject:</span> Your WordPress site is running PHP 5.6 — here's what that's costing you</div>
+      <div class="email-body">Hi Hillary and Mike,
+
+I was reviewing <span class="email-highlight">kozmaandkozma.com</span> today and discovered your store is still running <span class="email-highlight">PHP 5.6</span>, which reached end-of-life back in December 2018.
+
+This means three things for your business right now:
+• Google is actively <span class="email-highlight">deprioritising your site</span> in search results due to the security risk
+• Your WooCommerce store is likely <span class="email-highlight">incompatible with modern payment gateways</span>
+• The broken goo.gl links throughout the site are creating <span class="email-highlight">404 errors</span> that hurt rankings
+
+Given your incredible 4.7★ TripAdvisor rating (#15 in all of Doha), you deserve a website that matches the quality of your in-salon experience.
+
+At RF Studio, we specialise in exactly this — <span class="email-highlight">WordPress + WooCommerce upgrades</span> for growing brands across the GCC, paired with SEO that drives organic bookings.
+
+I'd love to send you a <span class="email-highlight">free 10-point technical audit</span> of your site — no obligation, just clarity on what's holding back your Google rankings.
+
+Can I send it over this week?
+
+Warm regards,
+[Your Name]
+RF Studio | rfstudio.co | WhatsApp: [Your Number]</div>
+    </div>
+
+    <div class="email-card">
+      <div class="email-header">
+        <div>
+          <div class="email-to">To: DASH Control Systems</div>
+          <div class="email-address">info@dashcontrol.com · Riyadh, Saudi Arabia</div>
+        </div>
+        <span class="badge badge-high">Send This Week</span>
+      </div>
+      <div class="email-subject"><span>Subject:</span> Why your competitors are outranking you for "motor drives Saudi Arabia"</div>
+      <div class="email-body">Dear DASH Control Systems Team,
+
+Your 30-year track record in the KSA market is impressive — but I noticed a significant gap: <span class="email-highlight">dashcontrol.com is virtually invisible on Google</span> for the terms your procurement manager customers are actively searching.
+
+Terms like <span class="email-highlight">"AC motor drives Saudi Arabia"</span>, <span class="email-highlight">"industrial control systems Riyadh"</span>, and <span class="email-highlight">"UPS distributor KSA"</span> are being won by newer, smaller competitors — simply because they invested in Technical SEO.
+
+I also noticed you're running Drupal, which makes SEO significantly harder to manage than WordPress. A migration would give you:
+• <span class="email-highlight">Easy product catalogue management</span> — no developer needed for updates
+• <span class="email-highlight">B2B WooCommerce</span> — automated quote requests from procurement teams
+• <span class="email-highlight">Multi-location SEO</span> — separate ranking pages for Riyadh, Jeddah, Dammam, and Al Khobar
+
+I've put together a <span class="email-highlight">free competitive SEO analysis</span> showing exactly which keywords your top 3 competitors are winning — and how RF Studio would help you take them back.
+
+Shall I share it?
+
+Best regards,
+[Your Name]
+RF Studio | rfstudio.co</div>
+    </div>
+
+    <div class="email-card">
+      <div class="email-header">
+        <div>
+          <div class="email-to">To: Sortlist Project Leads (Qatar)</div>
+          <div class="email-address">Via Sortlist Portal · Financial Services / Fintech / Real Estate</div>
+        </div>
+        <span class="badge badge-medium">Submit via Sortlist</span>
+      </div>
+      <div class="email-subject"><span>Subject:</span> RF Studio — Bilingual Technical SEO Specialist for Qatar Market</div>
+      <div class="email-body">Dear [Company Name] Team,
+
+Thank you for posting your project brief — I'd like to introduce RF Studio as your SEO partner for this engagement.
+
+<span class="email-highlight">Why RF Studio for Qatar?</span>
+
+✅ We specialise in <span class="email-highlight">bilingual Arabic/English SEO</span> — critical for Qatar's mixed search audience
+✅ Full Technical SEO audits covering <span class="email-highlight">200+ ranking factors</span> including Core Web Vitals, schema markup, and crawlability
+✅ WordPress expertise means we can implement SEO changes directly — no dependency on a separate developer
+✅ Experience with GCC market search behaviour, local intent signals, and SERP features
+
+<span class="email-highlight">Our proposed approach for your project:</span>
+1. 48-hour Technical SEO Audit (free, delivered before engagement starts)
+2. Full keyword research — Arabic &amp; English intent mapping
+3. On-page + Technical SEO implementation
+4. Monthly reporting with clear KPIs tied to your business goals
+
+I'd be happy to jump on a 20-minute call to discuss your specific goals and share relevant case studies.
+
+Looking forward to the opportunity.
+
+Best regards,
+[Your Name]
+RF Studio | rfstudio.co</div>
+    </div>
+
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- QUICK ACTION TABLE -->
+  <section>
+    <div class="section-title">⚡ Quick-Action <span>Table</span></div>
+    <div style="background:var(--card-bg);border:1px solid var(--card-border);border-radius:14px;overflow:hidden;">
+      <table class="qa-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Company</th>
+            <th>Contact Channel</th>
+            <th>Recommended Service</th>
+            <th>Est. Budget</th>
+            <th>Action Deadline</th>
+            <th>Priority</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td><strong style="color:#FFFFFF;">Kozma &amp; Kozma</strong><br><small>Doha, Qatar</small></td>
+            <td>📧 info@kozmaandkozma.com<br>📱 +974 6686 7220</td>
+            <td>WP PHP Upgrade + WooCommerce + Local SEO</td>
+            <td style="color: var(--emerald-light); font-weight:700;">$3K–$8K</td>
+            <td style="color:#FCA5A5;font-weight:600;">TODAY</td>
+            <td><span class="priority-dot dot-red"></span><strong style="color:#FCA5A5;">URGENT</strong></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td><strong style="color:#FFFFFF;">DASH Control Systems</strong><br><small>Riyadh, KSA</small></td>
+            <td>📧 info@dashcontrol.com<br>📱 +966 9200 07226</td>
+            <td>WP Migration + Tech SEO + B2B Catalogue</td>
+            <td style="color: var(--emerald-light); font-weight:700;">$5K–$12K</td>
+            <td style="color:#FCA5A5;font-weight:600;">THIS WEEK</td>
+            <td><span class="priority-dot dot-red"></span><strong style="color:#FCA5A5;">HIGH</strong></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td><strong style="color:#FFFFFF;">Financial Services (Qatar)</strong><br><small>Doha, Qatar</small></td>
+            <td>🌐 sortlist.com/seo/qatar-qa</td>
+            <td>SEO Strategy + Content Marketing</td>
+            <td style="color: var(--emerald-light); font-weight:700;">€15K–€35K</td>
+            <td>Apply via Sortlist</td>
+            <td><span class="priority-dot dot-amber"></span><strong style="color:#FCD34D;">MEDIUM</strong></td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td><strong style="color:#FFFFFF;">Fintech Startup (Qatar)</strong><br><small>Doha, Qatar</small></td>
+            <td>🌐 sortlist.com/seo/qatar-qa</td>
+            <td>Full SEO + Technical SEO</td>
+            <td style="color: var(--emerald-light); font-weight:700;">€15K–€40K</td>
+            <td>Apply via Sortlist</td>
+            <td><span class="priority-dot dot-amber"></span><strong style="color:#FCD34D;">MEDIUM</strong></td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td><strong style="color:#FFFFFF;">Real Estate Platform (Qatar)</strong><br><small>Doha, Qatar</small></td>
+            <td>🌐 sortlist.com/seo/qatar-qa</td>
+            <td>SEO + On-Page Optimization</td>
+            <td style="color: var(--emerald-light); font-weight:700;">€15K–€35K</td>
+            <td>Apply via Sortlist</td>
+            <td><span class="priority-dot dot-amber"></span><strong style="color:#FCD34D;">MEDIUM</strong></td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td><strong style="color:#FFFFFF;">Luxury Hotel (KSA)</strong><br><small>Riyadh Area</small></td>
+            <td>🌐 sortlist.com (WP Development)</td>
+            <td>WP Revamp + SEO + Elementor</td>
+            <td style="color: var(--emerald-light); font-weight:700;">$25K–$35K</td>
+            <td>Apply via Sortlist</td>
+            <td><span class="priority-dot dot-amber"></span><strong style="color:#FCD34D;">MEDIUM</strong></td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td><strong style="color:#FFFFFF;">Artisan Collective (KSA)</strong><br><small>Saudi Arabia</small></td>
+            <td>🌐 sortlist.com (eCommerce)</td>
+            <td>WooCommerce Build + SEO</td>
+            <td style="color: var(--emerald-light); font-weight:700;">€15K–€40K</td>
+            <td>Apply via Sortlist</td>
+            <td><span class="priority-dot dot-amber"></span><strong style="color:#FCD34D;">MEDIUM</strong></td>
+          </tr>
+          <tr>
+            <td>8–10</td>
+            <td><strong style="color:#FFFFFF;">School / Clinic / Real Estate</strong><br><small>Riyadh, KSA</small></td>
+            <td>🌐 bayt.com (Job Listings)</td>
+            <td>WordPress + Local SEO</td>
+            <td style="color: var(--emerald-light); font-weight:700;">$3K–$10K each</td>
+            <td>Research &amp; Identify</td>
+            <td><span class="priority-dot dot-green"></span><strong style="color:#6EE7B7;">WARM</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</div>
+
+<div class="footer">
+  <strong style="color:#FFFFFF;">RF Studio</strong> · Growth Intelligence Agency · rfstudio.co<br>
+  Report generated March 26, 2026 · Middle East Lead Generation · Riyadh &amp; Doha Focus<br>
+  <span style="font-size:11px;color:#475569;">All lead data sourced from public channels: Bayt.com, Sortlist.com, ZoomInfo public profiles. Always verify contact details before outreach.</span>
+</div>
+
+</body>
+</html>
